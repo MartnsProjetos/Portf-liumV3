@@ -16,7 +16,7 @@ O site foi desenvolvido com as seguintes ferramentas:
 - **AOS (Animate On Scroll)** – Animações suaves durante a rolagem.
 - **Particles.js** – Efeitos visuais com partículas interativas.
 - **FontAwesome** – Ícones modernos e práticos.
-- **EmailJS** – Envio de emails diretamente pelo site, sem backend.
+- **NodeJS** – Para envio de email (Servidor Backend) 
 
 ---
 
