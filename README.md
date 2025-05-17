@@ -47,7 +47,7 @@ O site foi desenvolvido com as seguintes ferramentas:
 Fique à vontade para me chamar para parcerias, freelas ou sugestões:
 
 - 📧 Email: [mtz.martinss03@gmail.com](mailto:mtz.martinss03@gmail.com)  
-- 💼 LinkedIn: [Linkedln]()
+- 💼 LinkedIn: [Linkedln](https://www.linkedin.com/in/matheusmartnsdeveloper/)
 - 📱 WhatsApp: [Clique aqui para conversar](https://wa.me/5511963822159)
 
 ---
