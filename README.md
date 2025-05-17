@@ -1,6 +1,6 @@
 # 💼 Martins Developer │ Portfólio Pessoal
 
-![Imagem do Projeto](./assets/image/rm-dev-portfolio2.0.png "Portfólio Martins Developer")
+!![Portfólio](https://github.com/MartnsProjetos/Portf-liumV3/raw/main/portf%C3%B3lio.png)
 
 Este repositório contém o código-fonte do meu site pessoal de portfólio, **Martins Developer**.  
 É uma vitrine digital onde apresento minhas habilidades e projetos como desenvolvedor web, com foco em design moderno, responsivo e funcionalidades interativas.
