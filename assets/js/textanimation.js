@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const typedTextSpan = document.querySelector(".texto-animado");
-    const textArray = ["Node.js", "Java Script", "MySQL", "Java", "Criativo"];
+    const textArray = ["Node.js", "Java Script", "MySQL", "Java", "Criativo", "Full Stack", "HTML & CSS"];
     const typingDelay = 100;
     const erasingDelay = 150;
     const newTextDelay = 1000; 
