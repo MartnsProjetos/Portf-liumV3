@@ -1,171 +1,525 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- FAVICON -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/image/favicon-rmdev.ico"
-    />
-
-    <title>Matheus Martins │ Desenvolvedor Freelancer</title>
-    <meta
-      name="description"
-      content="RM Developer: Soluções digitais personalizadas para elevar sua presença online. Criação de sites, otimização de SEO, e-commerce e muito mais. Transforme suas ideias digitais em realidade com RM Developer."
-    />
-
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/responsividade.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
-      integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <!--EmailJS-->
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"
-    ></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-80XVHS2NWN"
-    ></script>
+    <link rel="icon" type="image/x-icon" href="assets/image/favicon-rmdev.ico">
+    
+    <title>Matheus Martins │ Desenvolvedor Full Stack</title>
+    <meta name="description" content="Desenvolvedor Full Stack especializado em criar soluções digitais inovadoras. JavaScript, Node.js, MySQL, Java e muito mais.">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Particles.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-80XVHS2NWN"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-80XVHS2NWN");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-80XVHS2NWN');
     </script>
+</head>
 
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "756368293168994");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=756368293168994&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <style>
-      body {
-        overflow: hidden;
-      }
-    </style>
-  </head>
-
-  <body>
+<body>
+    <!-- Loading Screen -->
     <div id="loading-screen">
-      <div id="loading-percentage">0%</div>
+        <div id="loading-percentage">0%</div>
     </div>
 
-    <div class="loader"></div>
-
+    <!-- Header -->
     <header id="header" class="header">
-      <div class="container-header">
-        <div class="logo">
-          <a href="index.html"
-            >Matheus Martins <span class="destaque">│Dev.</span></a
-          >
+        <div class="container-header">
+            <div class="logo">
+                <a href="#home">Matheus Martins <span class="destaque">│Dev.</span></a>
+            </div>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#certificates">Certificados</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="menu" class="menu-navegacao">
+                <i class="fa-solid fa-times close-icon"></i>
+                <ul class="lista-navegacao">
+                    <li><a href="#home">INÍCIO</a></li>
+                    <li><a href="#about">SOBRE</a></li>
+                    <li><a href="#skills">HABILIDADES</a></li>
+                    <li><a href="#projects">PROJETOS</a></li>
+                    <li><a href="#certificates">CERTIFICADOS</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="menu-icon">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <div id="menu" class="menu-navegacao">
-          <i class="fa-solid fa-times close-icon"></i>
-          <ul class="lista-navegacao">
-            <li><a href="index.html">INÍCIO</a></li>
-            <li><a href="about.html">SOBRE</a></li>
-            
-            <li><a href="projects.html">PROJETOS</a></li>
-            <li>
-              <a href="certificados.html" class="fade-left active"
-                >CERTIFICADOS</a
-              >
-            </li>
-            <li><a href="contact.html">CONTATO</a></li>
-          </ul>
-        </div>
-      </div>
     </header>
 
-    <main id="home" class="home">
-      <div id="particles-js"></div>
-      <div class="container-home">
-        <div class="text-home">
-          <h1>Matheus Martins</h1>
-          <span
-            >Desenvolvedor <span class="destaque texto-animado"></span
-          ></span>
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div id="particles-js"></div>
+        <div class="container-home">
+            <div class="text-home" data-aos="fade-up">
+                <h1>Matheus Martins</h1>
+                <span>Desenvolvedor <span class="destaque texto-animado"></span></span>
+                <p class="home-description">
+                    Transformando ideias em soluções digitais inovadoras
+                </p>
+                <div class="home-buttons">
+                    <a href="#about" class="btn btn-primary">Conheça meu trabalho</a>
+                    <a href="#contact" class="btn btn-outline">Entre em contato</a>
+                </div>
+            </div>
+            <div class="redes-sociais">
+                <a href="https://github.com/MartnsProjetos" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/matheusmartnsdeveloper/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/5511963822159" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/martns_.dev/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <div class="redes-sociais">
-          <a href="https://github.com/MartnsProjetos" target="_blank"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/matheus-martins-ribeiro-25901428b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://wa.me/5511963822159" target="_blank"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-          <a href="https://www.instagram.com/martns_.dev/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
-      </div>
-    </main>
+    </section>
 
-    <script src="/assets/js/menu.js"></script>
-    <script src="/assets/js/headerAnimation.js"></script>
-    <script src="/assets/js/textAnimation.js"></script>
-    <script src="/assets/js/particles.js"></script>
-    <script src="assets/js/changePagesAnimation.js"></script>
-    <script src="assets/js/loadingAnimation.js"></script>
-  </body>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Conheça um pouco</span>
+                <h2 class="section-title">Sobre Mim</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Olá, me chamo Matheus Martins</h3>
+                    <p>
+                        Estudante dedicado ao desenvolvimento web e com foco em me tornar
+                        um desenvolvedor Full Stack. Estudo HTML, CSS, JavaScript,
+                        Node.js, MySQL e Java para criar aplicações completas, unindo
+                        front-end e back-end com eficiência. Busco sempre aprender e
+                        enfrentar novos desafios na área.
+                    </p>
+                    <p>
+                        Atualmente, curso o Ensino Médio no período noturno (19h às 23h) e
+                        busco ampliar minha experiência prática. Tenho experiência em
+                        atendimento ao público e gerenciamento de loja online,
+                        desenvolvendo habilidades essenciais como comunicação, organização
+                        e responsabilidade, importantes para minha carreira e crescimento
+                        profissional.
+                    </p>
+                    <div class="about-actions">
+                        <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                        <a href="Matheus Martins - Gupy-min.pdf" download class="btn btn-outline">Download CV</a>
+                    </div>
+                    <div class="soft-skills">
+                        <h4>Soft Skills</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fa-solid fa-rocket"></i>
+                                <span>Proatividade</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fa-solid fa-target"></i>
+                                <span>Determinação</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Resolução de problemas</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fa-solid fa-users"></i>
+                                <span>Trabalho em equipe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-wrapper">
+                        <img src="assets/image/About-me.png" alt="Matheus Martins">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Minhas competências</span>
+                <h2 class="section-title">Habilidades Técnicas</h2>
+            </div>
+            <div class="skills-content">
+                <div class="skills-text" data-aos="fade-right">
+                    <p>
+                        Possuo habilidades sólidas em desenvolvimento web, com conhecimentos
+                        em HTML, CSS, JavaScript, Node.js, MySQL e Java, que me permitem
+                        criar aplicações completas e funcionais. Estou sempre buscando aprender
+                        novas tecnologias e aprimorar meu raciocínio lógico para solucionar
+                        problemas de forma eficiente.
+                    </p>
+                </div>
+                <div class="skills-grid" data-aos="fade-up">
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/image/skills-img/html-5.png" alt="HTML5">
+                        <h4>HTML5</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="assets/image/skills-img/css3.png" alt="CSS3">
+                        <h4>CSS3</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/image/skills-img/javascript.png" alt="JavaScript">
+                        <h4>JavaScript</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="assets/image/skills-img/nodejs.png" alt="Node.js">
+                        <h4>Node.js</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/image/skills-img/sql.png" alt="MySQL">
+                        <h4>MySQL</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="350">
+                        <img src="assets/image/skills-img/java.png" alt="Java">
+                        <h4>Java</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Meu trabalho</span>
+                <h2 class="section-title">Projetos em Destaque</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="assets/image/cofhy01.jpeg" alt="E-commerce Cofhy">
+                        <div class="project-overlay">
+                            <a href="https://cofhy.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-commerce Cofhy</h3>
+                        <p>Plataforma de e-commerce completa com sistema de compras funcional, carrinho de compras e experiência de usuário otimizada.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="assets/image/studio-img.png" alt="Studio Creative">
+                        <div class="project-overlay">
+                            <a href="https://studiocreative.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Studio Creative</h3>
+                        <p>Site institucional moderno e responsivo, focado em experiência do usuário e performance com design limpo.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="assets/image/qrcode.jpeg" alt="QR Code Generator">
+                        <div class="project-overlay">
+                            <a href="https://linkarqr.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>QR Code Generator</h3>
+                        <p>Ferramenta online para geração de códigos QR personalizados, permitindo compartilhamentos rápidos de URLs.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="assets/image/manageradmin.jpeg" alt="Admin Manager">
+                        <div class="project-overlay">
+                            <a href="https://admtestmanager.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Admin Manager</h3>
+                        <p>Sistema administrativo completo com autenticação de usuários, gestão de produtos e análise de dados.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="assets/image/dashboard.jpeg" alt="Weather Dashboard">
+                        <div class="project-overlay">
+                            <a href="https://crmmanagerapp.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>Interface moderna para visualização de dados meteorológicos, com design intuitivo e informações em tempo real.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image">
+                        <img src="assets/image/ladingpagesemanimação.jpeg" alt="Landing Page">
+                        <div class="project-overlay">
+                            <a href="https://saladofuturo.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Landing Page</h3>
+                        <p>Página de destino otimizada para conversão de visitantes em leads ou clientes, com design clean.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Qualificações profissionais</span>
+                <h2 class="section-title">Certificados</h2>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img src="assets/cursos/PROA-Conclusão.png" alt="Instituto PROA">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Instituto PROA</h3>
+                        <span class="certificate-date">21/01/25 até 18/05/25 (100H)</span>
+                        <p>Desenvolvi competências para o mercado de trabalho, como autoconhecimento, projeto profissional, raciocínio lógico e comunicação.</p>
+                        <a href="https://drive.google.com/file/d/10fyOJQZBknAUYWtjGeukXU5Oh2qXrKD9/view?usp=sharing" target="_blank" class="certificate-link">
+                            Ver Certificado <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certificate-image">
+                        <img src="assets/cursos/java_alura.png" alt="Java Alura">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Java</h3>
+                        <span class="certificate-date">Alura - Carga Horária (8H)</span>
+                        <p>Completei um curso de Java onde aprendi a criar projetos no IntelliJ, controlar o fluxo com condicionais e loops.</p>
+                        <a href="https://cursos.alura.com.br/user/martins-dev/course/java-criando-primeira-aplicacao/certificate" target="_blank" class="certificate-link">
+                            Ver Certificado <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-image">
+                        <img src="assets/cursos/MySQL - Cursa.png" alt="MySQL">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>MySQL</h3>
+                        <span class="certificate-date">Cursa - 16/04/25 até 08/05/25 (18H)</span>
+                        <p>Conhecimento em MySQL para modelagem, manipulação e consulta de bancos de dados relacionais.</p>
+                        <a href="https://drive.google.com/file/d/1ufFAjWDFW8TMMuOmYQlIdAHb0DBrnnau/view?usp=sharing" target="_blank" class="certificate-link">
+                            Ver Certificado <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certificate-image">
+                        <img src="assets/cursos/javascript avançado.jpeg" alt="JavaScript Avançado">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>JavaScript Avançado</h3>
+                        <span class="certificate-date">IFMG - 30/01/25 até 19/02/25 (40H)</span>
+                        <p>Especialização em JavaScript ES6+, manipulação do DOM, frameworks modernos e desenvolvimento de aplicações web dinâmicas.</p>
+                        <a href="https://drive.google.com/file/d/127-fj-Bo37zP60Nsitbtm4VxRZyV8zKe/view?usp=sharing" target="_blank" class="certificate-link">
+                            Ver Certificado <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Vamos conversar</span>
+                <h2 class="section-title">Entre em Contato</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Pronto para transformar suas ideias em realidade?</h3>
+                    <p>
+                        Estou aqui para ajudar você a criar soluções digitais que
+                        impulsionam o crescimento do seu negócio. Entre em contato para
+                        discutirmos suas necessidades e como podemos alcançar seus
+                        objetivos juntos.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>mtz.martinss03@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localização</h4>
+                                <p>São Paulo, SP - Brasil</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+55 (11) 96382-2159</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/MartnsProjetos" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/matheusmartnsdeveloper/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/5511963822159" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/martns_.dev" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="user_name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="user_email" placeholder="Seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="user_phone" placeholder="Seu WhatsApp" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Assunto (opcional)">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Enviar Mensagem</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div id="form-success" class="success-message">
+                            Mensagem enviada com sucesso! Entrarei em contato em breve.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Matheus Martins. Todos os direitos reservados.</p>
+                    <p>Desenvolvido com <i class="fas fa-heart"></i> por <span class="destaque">Martins│Dev.</span></p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Início</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#projects">Projetos</a>
+                    <a href="#contact">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
