@@ -1,12 +1,7 @@
-{
-  "name": "project",
-  "version": "1.0.0",
-  "description": "![Portfólio](https://github.com/MartnsProjetos/Portf-liumV3/raw/main/portf%C3%B3lio.png)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
+@@ .. @@
+   "scripts": {
+-    "test": "echo \"Error: no test specified\" && exit 1"
++    "test": "echo \"Error: no test specified\" && exit 1",
++    "start": "http-server . -p 3000 -o",
++    "dev": "http-server . -p 3000 -o"
+   },
