@@ -1,8 +1,9 @@
 // Inicialização do AOS
 AOS.init({
-    duration: 1000,
+    duration: 800,
     once: true,
-    offset: 100
+    offset: 50,
+    easing: 'ease-out-cubic'
 });
 
 // Configuração do Particles.js
@@ -226,7 +227,9 @@ const skillsObserver = new IntersectionObserver((entries) => {
             const skillBars = entry.target.querySelectorAll('.skill-bar');
             skillBars.forEach(bar => {
                 const level = bar.getAttribute('data-level');
-                bar.style.width = level + '%';
+                setTimeout(() => {
+                    bar.style.width = level + '%';
+                }, 200);
             });
         }
     });
@@ -362,6 +365,38 @@ contactForm.addEventListener('submit', function(e) {
         formSubmitted = false;
     }, 5000);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Adicionar classe floating a alguns elementos
+    const floatingElements = document.querySelectorAll('.skill-card img, .certificate-image img');
+    floatingElements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 0.2}s`;
+        element.classList.add('floating');
+    });
+    
+    // Animação de entrada para os cards de projeto
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+    // Efeito de digitação melhorado
+    const textElement = document.querySelector('.texto-animado');
+    if (textElement) {
+        textElement.style.borderRight = '2px solid var(--primary-color)';
+        textElement.style.animation = 'blink 1s infinite';
+    }
+});
+
+// Adicionar CSS para animação de piscar do cursor
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes blink {
+        0%, 50% { border-color: var(--primary-color); }
+        51%, 100% { border-color: transparent; }
+    }
+`;
+document.head.appendChild(style);
 
 console.log('🚀 Portfólio carregado com sucesso!');
 console.log('💼 Desenvolvido por Matheus Martins');

@@ -298,10 +298,12 @@ section {
 .home {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 #particles-js {
@@ -316,7 +318,14 @@ section {
 .container-home {
     position: relative;
     z-index: 1;
-    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .text-home h1 {
@@ -327,6 +336,7 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: slideInDown 1s ease-out;
 }
 
 .text-home span {
@@ -334,6 +344,7 @@ section {
     color: var(--gray-300);
     margin-bottom: 2rem;
     display: block;
+    animation: slideInUp 1s ease-out 0.3s both;
 }
 
 .texto-animado {
@@ -348,6 +359,7 @@ section {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeIn 1s ease-out 0.6s both;
 }
 
 .home-buttons {
@@ -356,15 +368,16 @@ section {
     justify-content: center;
     margin: 3rem 0;
     flex-wrap: wrap;
+    animation: slideInUp 1s ease-out 0.9s both;
 }
 
 .redes-sociais {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    z-index: 1;
     display: flex;
     gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .redes-sociais a {
@@ -373,24 +386,79 @@ section {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 123, 255, 0.1);
+    border: 2px solid rgba(0, 123, 255, 0.3);
     border-radius: 50%;
     color: var(--light-color);
     font-size: 1.25rem;
     transition: var(--transition);
     backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.redes-sociais a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
 .redes-sociais a:hover {
     background: var(--primary-color);
+    border-color: var(--primary-color);
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+}
+
+.redes-sociais a:hover::before {
+    left: 100%;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--dark-color);
+}
+
+.redes-sociais a:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -40px;
 }
 
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite 1.5s both;
+    z-index: 1;
 }
 
 .scroll-arrow {
@@ -422,6 +490,52 @@ section {
     60% {
         transform: translateY(-5px);
     }
+}
+
+/* Novas animações */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animação flutuante para elementos */
+.floating {
+    animation: float 3s ease-in-out infinite;
 }
 
 /* About Section */
@@ -558,6 +672,7 @@ section {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
+    background: rgba(0, 123, 255, 0.05);
 }
 
 .skill-card img {
@@ -569,6 +684,7 @@ section {
 
 .skill-card:hover img {
     transform: scale(1.1);
+    filter: drop-shadow(0 5px 15px rgba(0, 123, 255, 0.3));
 }
 
 .skill-card h4 {
@@ -616,6 +732,7 @@ section {
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
 .project-image {
@@ -647,6 +764,7 @@ section {
 
 .project-card:hover .project-overlay {
     opacity: 1;
+    backdrop-filter: blur(5px);
 }
 
 .project-card:hover .project-image img {
@@ -669,6 +787,7 @@ section {
 
 .project-link:hover {
     transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
 .project-content {
@@ -721,6 +840,7 @@ section {
 .certificate-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
 .certificate-image {
@@ -737,6 +857,7 @@ section {
 
 .certificate-card:hover .certificate-image img {
     transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .certificate-content {
@@ -996,6 +1117,20 @@ section {
     
     .text-home h1 {
         font-size: 2.5rem;
+    }
+    
+    .home {
+        padding: 2rem 0;
+    }
+    
+    .redes-sociais {
+        margin-bottom: 1rem;
+    }
+    
+    .redes-sociais a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
     }
     
     .about-content,
