@@ -198,15 +198,15 @@ function typeWriter() {
         charIndex++;
     }
     
-    let typeSpeed = isDeleting ? 100 : 150;
+    let typeSpeed = isDeleting ? 80 : 120;
     
     if (!isDeleting && charIndex === currentText.length) {
-        typeSpeed = 2000;
+        typeSpeed = 1500;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
-        typeSpeed = 500;
+        typeSpeed = 300;
     }
     
     setTimeout(typeWriter, typeSpeed);
@@ -380,12 +380,28 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.animationDelay = `${index * 0.1}s`;
     });
     
-    // Efeito de digitação melhorado
-    const textElement = document.querySelector('.texto-animado');
-    if (textElement) {
-        textElement.style.borderRight = '2px solid var(--primary-color)';
-        textElement.style.animation = 'blink 1s infinite';
-    }
+    // Inicializar texto animado
+    setTimeout(() => {
+        typeWriter();
+    }, 1000);
+    
+    // Melhorar responsividade das imagens dos certificados
+    const certificateImages = document.querySelectorAll('.certificate-image img');
+    certificateImages.forEach(img => {
+        img.addEventListener('load', function() {
+            const container = this.parentElement;
+            const containerRatio = container.offsetWidth / container.offsetHeight;
+            const imageRatio = this.naturalWidth / this.naturalHeight;
+            
+            if (imageRatio > containerRatio) {
+                this.style.width = '100%';
+                this.style.height = 'auto';
+            } else {
+                this.style.width = 'auto';
+                this.style.height = '100%';
+            }
+        });
+    });
 });
 
 // Adicionar CSS para animação de piscar do cursor

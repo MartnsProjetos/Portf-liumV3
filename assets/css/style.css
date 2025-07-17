@@ -337,6 +337,7 @@ section {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: slideInDown 1s ease-out;
+    line-height: 1.2;
 }
 
 .text-home span {
@@ -345,6 +346,16 @@ section {
     margin-bottom: 2rem;
     display: block;
     animation: slideInUp 1s ease-out 0.3s both;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.texto-animado {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px;
+    text-align: left;
 }
 
 .texto-animado {
@@ -844,14 +855,19 @@ section {
 }
 
 .certificate-image {
-    height: 200px;
+    height: 250px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-800);
 }
 
 .certificate-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    max-height: 100%;
     transition: var(--transition);
 }
 
@@ -1111,26 +1127,64 @@ section {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .container-header {
+        padding: 1rem 15px;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
     
     .text-home h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+    
+    .text-home span {
+        font-size: 1.3rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
     }
     
     .home {
-        padding: 2rem 0;
+        padding: 1rem 0;
+        min-height: 100vh;
+    }
+    
+    .container-home {
+        padding: 0 15px;
     }
     
     .redes-sociais {
         margin-bottom: 1rem;
+        gap: 1rem;
     }
     
     .redes-sociais a {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
+    }
+    
+    .home-description {
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        padding: 0 10px;
+    }
+    
+    .home-buttons {
+        margin: 2rem 0;
+        gap: 0.8rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        min-width: 160px;
     }
     
     .about-content,
@@ -1141,10 +1195,21 @@ section {
     
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
     }
     
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .certificate-image {
+        height: 200px;
     }
     
     .home-buttons {
@@ -1160,6 +1225,18 @@ section {
     .footer-links {
         justify-content: center;
     }
+    
+    .scroll-indicator {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+        width: 45px;
+        height: 45px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1172,7 +1249,19 @@ section {
     }
     
     .text-home h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    
+    .text-home span {
+        font-size: 1.2rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+    }
+    
+    .home-description {
+        font-size: 1rem;
+        padding: 0 5px;
     }
     
     .section-title {
@@ -1182,5 +1271,33 @@ section {
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
+        min-width: 140px;
+    }
+    
+    .redes-sociais {
+        gap: 0.8rem;
+    }
+    
+    .redes-sociais a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .skill-card {
+        padding: 1.5rem;
+    }
+    
+    .certificate-image {
+        height: 180px;
+    }
+    
+    .project-image {
+        height: 200px;
     }
 }
