@@ -169,6 +169,8 @@ body {
     cursor: pointer;
     color: var(--light-color);
     transition: var(--transition);
+    z-index: 10001;
+    position: relative;
 }
 
 .menu-icon:hover {
@@ -181,12 +183,13 @@ body {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: var(--dark-color);
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    z-index: 9999;
+    z-index: 10000;
 }
 
 .menu-navegacao.open {
@@ -201,6 +204,7 @@ body {
     cursor: pointer;
     color: var(--light-color);
     transition: var(--transition);
+    z-index: 10001;
 }
 
 .close-icon:hover {
@@ -346,16 +350,29 @@ section {
     margin-bottom: 2rem;
     display: block;
     animation: slideInUp 1s ease-out 0.3s both;
-    height: 2rem;
-    line-height: 2rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .texto-animado {
     color: var(--primary-color);
     font-weight: 600;
-    display: inline-block;
-    min-width: 120px;
-    text-align: left;
+    display: inline;
+    min-width: 140px;
+    text-align: center;
+    position: relative;
+}
+
+.texto-animado::after {
+    content: '|';
+    color: var(--primary-color);
+    animation: blink 1s infinite;
+    margin-left: 2px;
 }
 
 .texto-animado {
@@ -855,19 +872,20 @@ section {
 }
 
 .certificate-image {
-    height: 250px;
+    height: 200px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--gray-800);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .certificate-image img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: var(--transition);
 }
 
@@ -1133,6 +1151,13 @@ section {
     
     .container-header {
         padding: 1rem 15px;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    .header {
+        background: rgba(10, 10, 26, 0.98);
+        backdrop-filter: blur(20px);
     }
     
     .section-title {
@@ -1142,26 +1167,36 @@ section {
     .text-home h1 {
         font-size: 2.8rem;
         line-height: 1.1;
+        text-align: center;
     }
     
     .text-home span {
         font-size: 1.3rem;
-        height: 1.8rem;
-        line-height: 1.8rem;
+        height: 2rem;
+        line-height: 2rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .texto-animado {
+        min-width: 120px;
     }
     
     .home {
         padding: 1rem 0;
         min-height: 100vh;
+        text-align: center;
     }
     
     .container-home {
         padding: 0 15px;
+        text-align: center;
     }
     
     .redes-sociais {
         margin-bottom: 1rem;
         gap: 1rem;
+        justify-content: center;
     }
     
     .redes-sociais a {
@@ -1174,11 +1209,13 @@ section {
         font-size: 1.1rem;
         margin: 1.5rem 0;
         padding: 0 10px;
+        text-align: center;
     }
     
     .home-buttons {
         margin: 2rem 0;
         gap: 0.8rem;
+        justify-content: center;
     }
     
     .btn {
@@ -1209,7 +1246,13 @@ section {
     }
     
     .certificate-image {
-        height: 200px;
+        height: 250px;
+    }
+    
+    .certificate-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
     
     .home-buttons {
@@ -1237,6 +1280,14 @@ section {
         width: 45px;
         height: 45px;
     }
+    
+    .menu-navegacao {
+        backdrop-filter: blur(30px);
+    }
+    
+    .lista-navegacao a {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1251,17 +1302,26 @@ section {
     .text-home h1 {
         font-size: 2.2rem;
         line-height: 1.1;
+        text-align: center;
     }
     
     .text-home span {
         font-size: 1.2rem;
-        height: 1.6rem;
-        line-height: 1.6rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .texto-animado {
+        min-width: 100px;
+        font-size: 1.2rem;
     }
     
     .home-description {
         font-size: 1rem;
         padding: 0 5px;
+        text-align: center;
     }
     
     .section-title {
@@ -1276,6 +1336,7 @@ section {
     
     .redes-sociais {
         gap: 0.8rem;
+        justify-content: center;
     }
     
     .redes-sociais a {
@@ -1294,10 +1355,28 @@ section {
     }
     
     .certificate-image {
-        height: 180px;
+        height: 220px;
+    }
+    
+    .certificate-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
     
     .project-image {
         height: 200px;
+    }
+    
+    .lista-navegacao a {
+        font-size: 1.6rem;
+    }
+    
+    .container-header {
+        padding: 0.8rem 15px;
+    }
+    
+    .logo a {
+        font-size: 1.3rem;
     }
 }
